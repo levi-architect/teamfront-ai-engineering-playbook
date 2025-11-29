@@ -55,7 +55,7 @@ This repository contains the core manuals, standards, and frameworks that define
 - **Teamfront AI Engineering Manifesto**  
   Vision, transformation, and the next 900 days.
 
-- **AI Cursor Development Framework**  
+- **AI IDE (.e.g. Cursor) Development Framework**  
   PRD → Design Doc → Cursor Execution workflow.
 
 - **AI Figma → Builder → MCP Framework**  
