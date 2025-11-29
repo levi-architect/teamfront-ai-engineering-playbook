@@ -154,3 +154,4 @@ This Playbook is how we lead.
 
 ## ✨ Authored By  
 **Levi Garner**  
+CTO/AI Engineering Leader & System Architect  
