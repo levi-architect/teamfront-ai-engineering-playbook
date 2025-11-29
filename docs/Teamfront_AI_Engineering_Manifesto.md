@@ -181,5 +181,5 @@ Teamfront will lead the AI engineering revolution.
 ## ✍️ X. Authorship
 
 **Levi Garner**  
-AI Engineering Leader & System Architect  
+CTO/AI Engineering Leader & System Architect  
 Teamfront Product Companies
