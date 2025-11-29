@@ -118,15 +118,15 @@ Every feature must follow:
 
 This standardizes how AI loads and interprets requirements.
 
-📘 V. Execution Plan (What the AI IDE Follows Step-By-Step)
+📘 V. Execution Plan
 
-The execution plan provides the step-by-step instructions that AI IDEs follow.
+The Execution Plan provides the step-by-step instructions that AI IDEs follow.
 
 Save as:
 
 /docs/<feature>/EXECUTION_PLAN.md
 
-Execution Plan Defines:
+The Execution Plan Defines:
 
 Phase order
 
@@ -136,7 +136,7 @@ Naming conventions
 
 Slice sequencing
 
-When/where to stop
+When and where to stop
 
 FE ↔ BE alignment rules
 
@@ -146,7 +146,7 @@ This turns AI IDEs into deterministic execution engines.
 
 🛠️ VI. AI IDE Build Phases (Teamfront Standard)
 
-The phases below match how Teamfront modernizes legacy systems and builds greenfield features with AI.
+These phases match how Teamfront modernizes legacy systems and builds new features with AI.
 
 ⚙️ Phase 1 — Backend Foundations
 
@@ -218,7 +218,7 @@ Error format alignment
 
 Type corrections
 
-This eliminates API contract drift.
+This eliminates drift between frontend and backend.
 
 🧩 Phase 4 — Domain Logic + UX Behavior
 
@@ -226,7 +226,7 @@ AI implements:
 
 Totals
 
-Validation
+Validation rules
 
 Invariants
 
@@ -266,7 +266,7 @@ This produces a production-grade feature.
 
 🧾 VII. Example: Invoicing (DDD-Aligned)
 
-This is modeled using your architectural standards.
+This example matches Teamfront's modern architecture.
 
 Invoice Domain
 
@@ -330,28 +330,23 @@ SendPaymentReceipt
 🚀 IX. Invoicing Execution Plan
 Phase 1
 
-Backend foundations:
-entities, aggregates, DTOs, commands, queries, validators, empty controllers.
+Backend foundations: entities, aggregates, DTOs, commands, queries, validators, empty controllers.
 
 Phase 2
 
-Frontend foundations:
-screens, tables, forms, TS interfaces, empty services.
+Frontend foundations: screens, tables, forms, TS interfaces, empty services.
 
 Phase 3
 
-Wiring:
-services → controllers, type syncing, DTO alignment.
+Wiring: services → controllers, type syncing, DTO alignment.
 
 Phase 4
 
-Domain logic:
-totals, tax, finalize, payment rules.
+Domain logic: totals, tax, finalize invoice, payment rules.
 
 Phase 5
 
-Polish:
-sorting, filtering, emailing, pagination, UX refinements.
+Polish: sorting, filtering, emailing, pagination, UX refinements.
 
 ⭐ X. Why This Framework Works
 
@@ -367,6 +362,6 @@ Drift goes to zero
 
 Modernization becomes continuous
 
-Features ship 3–5× faster
+Features ship 3–5x faster
 
 This is the Teamfront AI-First Engineering Operating System.
