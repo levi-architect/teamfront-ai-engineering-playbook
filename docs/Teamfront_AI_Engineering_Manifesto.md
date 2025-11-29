@@ -1,5 +1,5 @@
 # 🧠 Teamfront AI Engineering Manifesto
-### *The Next 900 Days Will Redefine the Next 20 Years of Engineering*
+### *The Next 900 Days Will Redefine Engineering*
 
 ---
 
