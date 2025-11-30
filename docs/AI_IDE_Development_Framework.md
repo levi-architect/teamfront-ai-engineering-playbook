@@ -77,9 +77,17 @@ Save as:
 
 ---
 
-## 📁 IV. Required Folder Structure
+### 📁 IV. Required Folder Structure
 
-Every feature must follow: /docs // PRD.md DESIGN.md EXECUTION_PLAN.md
+Every feature must follow:
+
+```
+/docs  
+    /<feature>/  
+        PRD.md  
+        DESIGN.md  
+        EXECUTION_PLAN.md
+```
 
 ---
 
