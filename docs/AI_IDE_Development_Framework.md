@@ -1,367 +1,323 @@
-⚙️ AI IDE Development Framework
-The Standard PRD → Design Doc → Execution Workflow for AI-Accelerated Engineering
-🧠 I. Overview
+```md
+# ⚙️ AI IDE Development Framework
+### *The Standard PRD → Design Doc → Execution Workflow for AI-Accelerated Engineering*
+
+---
+
+## 🧠 I. Overview
 
 The AI IDE Development Framework defines how Teamfront engineers design, model, and build modern software using AI IDEs such as Cursor, Antigravity, Claude Code, Continue.dev, Windsurf, and Amazon Q.
 
 This framework is tool-agnostic and focuses on creating repeatable, predictable, domain-driven, AI-accelerated development across all Teamfront product companies.
 
-📝 II. How PRDs Are Created in the AI Era
+---
+
+## 📝 II. How PRDs Are Created in the AI Era
 
 PRDs are never written manually.
-
 They are generated from real conversations.
 
-PRD Creation Workflow
+### PRD Creation Workflow
 
-Record the meeting (Zoom + Fathom).
-
-Export the transcript.
-
-Paste the transcript into ChatGPT.
-
+Record the meeting (Zoom + Fathom).  
+Export the transcript.  
+Paste the transcript into ChatGPT.  
 Instruct ChatGPT to extract:
 
-Summary
+- Summary  
+- Problem  
+- Goals  
+- Non-goals  
+- Personas (Field Service Office Admins, Technicians, Estimators, Owners)  
+- Requirements  
+- Edge cases  
+- Success metrics  
+- Risks  
 
-Problem
+Save the final version as:
 
-Goals
+`/docs/<feature>/PRD.md`
 
-Non-goals
+The PRD defines **WHAT** we are building.
 
-Personas (Field Service Office Admins, Technicians, Estimators, Owners)
+---
 
-Requirements
+## 🏗️ III. How Design / Architecture Docs Are Created
 
-Edge cases
-
-Success metrics
-
-Risks
-
-Save as:
-
-/docs/<feature>/PRD.md
-
-
-The PRD defines WHAT we are building.
-
-🏗️ III. How Design / Architecture Docs Are Created
-
-The PRD answers WHAT.
+The PRD answers WHAT.  
 The Design Doc answers HOW.
 
 Design Docs are generated through ChatGPT, using the PRD as the source of truth.
 
-Each Design Doc must define:
+### Each Design Doc must define:
 
-Domain Modeling
+**Domain Modeling**
+- Entities  
+- Value Objects  
+- Aggregates  
+- Domain Events (plain objects)  
+- Invariants  
+- Relationships  
 
-Entities
+**Application Layer**
+- Commands  
+- Queries  
+- Validators  
+- Vertical slice boundaries  
 
-Value Objects
+**API Layer**
+- Endpoints  
+- Request and response DTOs  
 
-Aggregates
-
-Domain Events
-
-Invariants
-
-Relationships
-
-Application Layer
-
-Commands
-
-Queries
-
-Validators
-
-Slice boundaries
-
-API Layer
-
-Endpoints
-
-Request and response DTOs
-
-System Constraints
-
-Business rules
-
-Error handling
-
-Non-functional requirements
-
-Performance constraints
-
-Permissions
+**System Constraints**
+- Business rules  
+- Error handling  
+- Non-functional requirements  
+- Performance constraints  
+- Permissions  
 
 Save as:
 
-/docs/<feature>/DESIGN.md
-
+`/docs/<feature>/DESIGN.md`
 
 This becomes the engineering contract for the AI IDE.
 
-📁 IV. Required Folder Structure
+---
+
+## 📁 IV. Required Folder Structure
 
 Every feature must follow:
 
+```
 /docs
-  /<feature>/
-    PRD.md
-    DESIGN.md
-    EXECUTION_PLAN.md
-
+/<feature>/
+   PRD.md
+   DESIGN.md
+   EXECUTION_PLAN.md
+```
 
 This standardizes how AI loads and interprets requirements.
 
-📘 V. Execution Plan
+---
 
-The Execution Plan provides the step-by-step instructions that AI IDEs follow.
+## 📘 V. Execution Plan (AI IDE Instructions)
+
+The Execution Plan tells the AI IDE exactly how to build the feature.
 
 Save as:
 
-/docs/<feature>/EXECUTION_PLAN.md
+`/docs/<feature>/EXECUTION_PLAN.md`
 
-The Execution Plan Defines:
+### The Execution Plan Defines:
 
-Phase order
+- Phase order  
+- What is built in each phase  
+- Naming conventions  
+- Slice sequencing  
+- Stop points  
+- FE ↔ BE alignment rules  
+- Acceptance criteria  
 
-What is built in each phase
+This makes AI-driven execution deterministic.
 
-Naming conventions
+---
 
-Slice sequencing
+# 🛠️ VI. AI IDE Build Phases (Teamfront Standard)
 
-Stop points
+Below is the universal workflow used across all Teamfront companies.
 
-FE ↔ BE alignment rules
+---
 
-Acceptance criteria
-
-This turns AI IDEs into deterministic execution engines.
-
-🛠️ VI. AI IDE Build Phases (Teamfront Standard)
-
-These phases match how Teamfront modernizes legacy systems and builds new features with AI.
-
-⚙️ Phase 1 — Backend Foundations
+## ⚙️ Phase 1 — Backend Foundations (NO logic yet)
 
 Generate exactly what DESIGN.md specifies:
 
-Entities
+- Entities  
+- Aggregates  
+- Value Objects  
+- Domain Events  
+- Repositories  
+- DTOs  
+- Commands  
+- Queries  
+- Validators  
+- Mappers  
+- Empty Controllers  
 
-Aggregates
+### Rules:
 
-Value Objects
+- No domain logic  
+- No integration logic  
+- No frontend code  
+- STOP when scaffolding matches DESIGN.md  
 
-Domain Events
+---
 
-Repositories
-
-DTOs
-
-Commands
-
-Queries
-
-Validators
-
-Mappers
-
-Empty Controllers
-
-Rules
-
-No domain logic
-
-No integration logic
-
-No frontend code
-
-Stop when scaffolding is complete
-
-🖥️ Phase 2 — Frontend Foundations
+## 🖥️ Phase 2 — Frontend Foundations
 
 AI generates:
 
-Routes
+- Routes  
+- Navigation entry  
+- Screens  
+- Forms  
+- Tables  
+- Modals  
+- TypeScript interfaces  
+- Empty API services  
 
-Navigation entry
+### Rules:
 
-Screen shells
+- Structural scaffolding only  
+- No business logic  
+- No API communication yet  
 
-Forms
+---
 
-Tables
+## 🔗 Phase 3 — FE ↔ BE Wiring
 
-Modals
+AI connects:
 
-TypeScript interfaces
+- DTOs ↔ TS interfaces  
+- Services ↔ Controllers  
+- Commands ↔ Form fields  
+- Error formats ↔ UI error states  
+- Type alignment across FE and BE  
 
-Empty services
+This eliminates API contract drift.
 
-🔗 Phase 3 — FE ↔ BE Wiring
+---
 
-AI performs:
-
-DTO ↔ TS interface syncing
-
-Service → API wiring
-
-Form field → command mapping
-
-Error format alignment
-
-Type corrections
-
-This eliminates drift between frontend and backend.
-
-🧩 Phase 4 — Domain Logic + UX Behavior
+## 🧠 Phase 4 — Domain Logic + UX Behavior
 
 AI implements:
 
-Totals
+- Totals  
+- Validation  
+- Invariants  
+- Tax logic  
+- Payment logic  
+- Domain rules  
+- Error handling  
+- Loading states  
+- UX behaviors  
 
-Validation
+---
 
-Invariants
-
-Tax logic
-
-Payment logic
-
-Error states
-
-Loading states
-
-UX flows
-
-🎨 Phase 5 — Final Polish
+## 🎨 Phase 5 — Final Polish
 
 AI adds:
 
-Sorting
+- Sorting  
+- Filtering  
+- Pagination  
+- Search  
+- Loading skeletons  
+- Empty states  
+- PDF/Email actions  
+- Cleanup  
+- Tests  
 
-Filtering
+This produces a production-ready feature.
 
-Pagination
+---
 
-Search
+# 🧾 VII. Example Domain: Invoicing (DDD-Aligned)
 
-Empty states
+### Entities / Aggregates
 
-Loading skeletons
+- `Invoice` (aggregate root)  
+- `InvoiceLineItem` (value object)  
+- `InvoiceTotals` (value object)  
+- `Transaction` (aggregate root)  
+- `TaxRate`  
 
-Email/PDF actions
+---
 
-Cleanup
+## 📐 VIII. Invoicing Vertical Slices
 
-Tests
+### invoice/
+- CreateInvoice  
+- AddLineItem  
+- RemoveLineItem  
+- RecalculateTotals  
+- FinalizeInvoice  
+- GetInvoice  
+- ListInvoices  
 
-This produces a production-grade feature.
+### transaction/
+- InitiateTransaction  
+- ApplyPaymentToInvoice  
+- GetTransaction  
+- ListTransactions  
 
-🧾 VII. Example: Invoicing (DDD-Aligned)
+### tax/
+- GetTaxRate  
+- CalculateTax  
 
-This example matches Teamfront’s modern architecture.
+### integration.email/
+- SendInvoiceEmail  
+- SendPaymentReceipt  
 
-Invoice Domain
+---
 
-Invoice (aggregate root)
+# 🚀 IX. Invoicing Execution Plan
 
-LineItem (value object)
+### Phase 1 — Backend Foundations
+Generate:
+- All entities  
+- Commands/queries  
+- DTOs  
+- Validators  
+- Mappers  
+- Repositories  
+- Empty controllers  
 
-InvoiceTotals (value object)
+Stop when scaffolding exists.
 
-Transaction Domain
+### Phase 2 — Frontend Foundations
+Generate:
+- Invoice list  
+- Invoice detail  
+- Invoice create/edit  
+- Forms & modals  
+- TS interfaces  
+- Empty API services  
 
-Transaction (aggregate root)
+### Phase 3 — Wiring
+- API ↔ FE  
+- DTO syncing  
+- Type alignment  
+- Route → Controller mapping  
 
-Tax Domain
+### Phase 4 — Domain Logic
+- Totals logic  
+- Tax calculation  
+- Validation  
+- Payment rules  
 
-TaxRate
+### Phase 5 — Polish
+- Filters  
+- Sorting  
+- Pagination  
+- PDF/Email send  
+- UX cleanup  
 
-Email Integration Domain
+---
 
-EmailSendRequest
+# ⭐ X. Why This Framework Works
 
-📐 VIII. Invoicing Vertical Slices
-invoice/
+- AI handles mechanical work  
+- Humans enforce domain correctness  
+- Standardization eliminates drift  
+- FE and BE always match  
+- Multi-product consistency  
+- Modernization becomes continuous  
+- Features ship 3–5× faster  
 
-CreateInvoice
+This is the **Teamfront AI-First Engineering Operating System**.
 
-AddLineItem
+---
 
-RemoveLineItem
-
-RecalculateTotals
-
-FinalizeInvoice
-
-GetInvoice
-
-ListInvoices
-
-transaction/
-
-InitiateTransaction
-
-ApplyPaymentToInvoice
-
-GetTransaction
-
-ListTransactions
-
-tax/
-
-GetTaxRate
-
-CalculateTax
-
-integration.email/
-
-SendInvoiceEmail
-
-SendPaymentReceipt
-
-🚀 IX. Invoicing Execution Plan
-Phase 1
-
-Backend foundations: entities, aggregates, DTOs, commands, queries, validators, empty controllers.
-
-Phase 2
-
-Frontend foundations: screens, tables, forms, TS interfaces, empty services.
-
-Phase 3
-
-Wiring: services → controllers, type syncing, DTO alignment.
-
-Phase 4
-
-Domain logic: totals, tax, finalize invoice, payment rules.
-
-Phase 5
-
-Polish: sorting, filtering, emailing, pagination, UX refinements.
-
-⭐ X. Why This Framework Works
-
-AI handles repetitive engineering
-
-Engineers enforce domain correctness
-
-Architecture becomes standardized
-
-FE and BE always match
-
-Drift goes to zero
-
-Modernization becomes continuous
-
-Features ship 3–5x faster
-
-This is the Teamfront AI-First Engineering Operating System.
+# ✅ End of Document
+```
