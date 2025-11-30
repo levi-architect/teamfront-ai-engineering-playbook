@@ -58,7 +58,7 @@ This repository contains the core manuals, standards, and frameworks that define
 - **AI IDE (.e.g. Cursor) Development Framework**  
   PRD → Design Doc → Cursor Execution workflow.
 
-- **AI Figma → Builder → MCP Framework**  
+- **AI Design to Code Generators (.e.g. Figma → Builder) → MCP Framework**  
   Modern design-to-frontend pipeline for accelerated UI builds.
 
 - **AI Design → Backend Integration Guide**  
